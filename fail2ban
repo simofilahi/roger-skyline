@@ -1,0 +1,21 @@
+sudo yum install epel-release
+sudo yum install fail2ban
+sudo systemctl enable  fail2ban
+sudo vim  /etc/fail2ban/jail.local
+{
+[DEFAULT]
+# Ban hosts for one hour:
+bantime = 3600
+
+# Override /etc/fail2ban/jail.d/00-firewalld.conf:
+banaction = iptables-multiport
+
+[sshd]
+enabled = true
+}
+sudo vim jail.conf
+sudo systemctl restart fail2ban
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+sudo iptables -S
+sudo fail2ban-client set sshd unbanip @ip

@@ -1,0 +1,7 @@
+##in host machine
+ssh-keygen -t rsa -b 4096
+ll .ssh
+scp ~/.ssh/id_rsa.pub guest@10.11.10.253:/home/guest/.ssh/uploaded_key.pub
+
+##in vps
+cat ~/.ssh/uploade* >> ~/.ssh/authorized_keys

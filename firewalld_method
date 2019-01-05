@@ -1,0 +1,14 @@
+sudo yum install firewalld
+sudo systemctl enable firewalld
+sudo reboot
+sudo firewall-cmd --state
+firewall-cmd --get-active-zones
+sudo firewall-cmd --list-all
+sudo firewall-cmd --zone=home --list-all
+firewall-cmd --get-active-zones
+sudo firewall-cmd --zone=public --list-services
+sudo firewall-cmd --zone=public --permanent --add-port=22/tcp
+sudo firewall-cmd --reload
+firewall-cmd --get-services
+
+

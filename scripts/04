@@ -1,0 +1,18 @@
+#!/bin/bash
+
+filename="/root/comapremd5.txt"
+
+if [ ! -f $filaname ]
+then
+	md5sum  /etc/crontab | cut -d ' ' -f 1 > $filename
+else
+	commd5=$(cat /root/comapremd5.txt)
+	currmd5=$(md5sum /etc/crontab | cut -d ' ' -f 1)
+	if [ "$commd5" != "$currmd5" ]
+	then
+		echo "the file /etc/crontab was modified" | mail -s "crontab update" root@debian
+		echo "$currmd5" >  /root/comapremd5.txt
+	fi
+fi
+
+#add this : * 0  * * 0-6 root bash /PATH     to /etc/crontab

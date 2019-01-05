@@ -1,0 +1,4 @@
+#!/bin/bash
+apt-get update && apt-get upgrade >> /var/log/update_script.log
+
+#add this : * 4   * * 1 root bash /PATH  to /etc/crontab

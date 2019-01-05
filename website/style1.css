@@ -1,0 +1,39 @@
+*
+{
+	box-sizing: border-box;
+}
+
+header
+{
+	background-image: url(photos/background.jpeg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+body
+{
+	font-family: monospace;
+}
+
+.container
+{
+	max-width: 1200px;
+	margin: auto;
+	overflow: auto;
+}
+
+.Photos
+{
+	margin: 5px;
+	border: 1x solid #ccc;
+	float: left;
+	width: 390px;
+}
+
+.Photos img
+{
+	width: 100%;
+	height: 300px;
+}
+

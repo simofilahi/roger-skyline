@@ -1,0 +1,11 @@
+sudo yum install nginx
+sudo systemctl status nginx
+sudo systemctl start nginx
+vim /etc/nginx/nginx.conf
+sudo mv nginx.conf nginx.conf.original
+vim nginx.conf
+cd /data/
+ls
+sudo mkdir www
+sudo mv index.html www/
+cd www/

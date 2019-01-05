@@ -1,0 +1,1 @@
+cp -P 2222 mfilahi@10.11.10.13 ~/Desktop/website/*  guest@10.11.10.253:/usr/share/nginx/html/.

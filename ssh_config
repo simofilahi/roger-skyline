@@ -1,0 +1,4 @@
+ sudo vim /etc/ssh/sshd_config
+#check service selinx : sestatus
+ sudo semanage port -a -t ssh_port_t -p tcp 2222
+ sudo service sshd restart

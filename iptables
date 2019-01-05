@@ -1,0 +1,15 @@
+sudo systemctl disable firewalld
+sudo systemctl mask firewalld
+sudo yum install iptables-services
+sudo systemctl enable iptables
+##for flush iptables use this command line : iptables -F
+sudo iptables -A INPUT -i lo -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 2222 -j ACCEPT
+sudo iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+## for check rule sudo iptables -L -n
+sudo iptables-save | sudo tee /etc/sysconfig/iptables
+sudo service iptables restart
+##for test open port netstat -plant
+sudo iptables -S
